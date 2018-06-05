@@ -29,8 +29,8 @@ RUN /bin/sed -i 's/AllowOverride\ None/AllowOverride\ All/g' /etc/apache2/apache
 
 # Install git, feel free to change these
 RUN apt -y install  git && \
-    git config --global user.email "fakuivan@gmail.com" && \
-    git config --global user.name  "fakuivan"
+    git config --global user.email "$(whoami)@$(hostname)" && \
+    git config --global user.name  "$(whoami)"
 
 # Install daloRADIUS
 ENV DR_FILES="/root/daloradius"
