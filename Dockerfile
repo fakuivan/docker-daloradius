@@ -42,8 +42,8 @@ ADD "./config.patch" "/config.patch"
 RUN git -C "/var/www/html" apply "/config.patch"
 
 # Add entrypoint
-ADD "./entrypoint.sh" "entrypoint.sh"
-ENTRYPOINT [ "./entrypoint.sh" ]
+ADD "./entrypoint.sh" "/entrypoint.sh"
+ENTRYPOINT [ "/entrypoint.sh" ]
 
 EXPOSE 80 443
 
