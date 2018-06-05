@@ -33,8 +33,7 @@ RUN /bin/sed -i 's/AllowOverride\ None/AllowOverride\ All/g' /etc/apache2/apache
 RUN apt -y install  git
 
 # Install daloRADIUS
-RUN rm -rf /var/www/html/index.html && \
-    git clone "${REPO}" "/var/www/html" && \
+RUN git clone "${REPO}" "/var/www/html" && \
     git -C "/var/www/html" checkout "${RELEASE}" && \
     chown www-data:www-data -R "/var/www/html"
 
